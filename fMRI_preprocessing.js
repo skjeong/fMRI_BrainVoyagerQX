@@ -30,16 +30,16 @@ for (counter = 0; counter < RunNames.length; counter++)
 	FmrProject = BrainVoyagerQX.OpenDocument( ResultFileName );
 
 	// Preprocessing step 2: 3D motion correction
-	if (RunNames[counter] == "objpair4_1")
+	if (RunNames[counter] == "exp1")
 		{
 		FmrProject.CorrectMotionEx(1,1,1,100,0,0);	// from previous script
 		//FmrProject.MotionCorrection3D();
 		}
 
 	// ** enter the name of the first funrtional run here
-	if (RunNames[counter] != "objpair4_1")
+	if (RunNames[counter] != "exp1")
 		{
-		FmrProject.CorrectMotionTargetVolumeInOtherRunEx(ObjectsSubjPath+"objpair4_1/objpair4_1_SCCAI_3DMCT_LTR.fmr", 1,1, 1, 100, 0, 0); // from previous script																				
+		FmrProject.CorrectMotionTargetVolumeInOtherRunEx(ObjectsSubjPath+"/exp1_1_SCCAI_3DMCT_LTR.fmr", 1,1, 1, 100, 0, 0); // from previous script																				
   		//FmrProject.CorrectMotionTargetVolumeInOtherRun("car1.fmr", 1);
 		}
 	ResultFileName = FmrProject.FileNameOfPreprocessdFMR;  // the current doc (input FMR) knows the name of the automatically saved output FMR
